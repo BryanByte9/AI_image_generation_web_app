@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Image Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+
+  <body data-max-prompt-len="{{ max_prompt_len }}">
+    <div class="bg"></div>
+
+    <main class="page">
+      <header class="hero">
+        <h1 class="title">AI Image Generator</h1>
+        <p class="subtitle">Create an image from scratch from a text description.</p>
+      </header>
+
+      <section class="panel">
+        <div class="left">
+          <div class="card">
+            <div class="label">Create an image from text prompt</div>
+
+            <textarea
+              id="prompt"
+              class="prompt"
+              rows="6"
+              maxlength="{{ max_prompt_len }}"
+              placeholder='Subject (car type/model) + scene + style + lighting, e.g., "electric SUV, city street, realistic, soft daylight"'
+              spellcheck="false"
+            ></textarea>
+            <div id="promptCounter" class="promptCounter">0/{{ max_prompt_len }}</div>
+
+            <button id="generateBtn" class="btn" type="button">
+              <span id="btnText">Generate</span>
+            </button>
+
+            <div class="meta">
+              <div class="status">
+                <span id="spinner" class="spinner hidden" aria-hidden="true"></span>
+                <span id="statusText" class="statusText">Ready</span>
+              </div>
+              <div id="errorText" class="error hidden"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="preview">
+            <div id="placeholder" class="placeholder">
+              <div class="mark"></div>
+            </div>
+            <img id="resultImage" class="result hidden" alt="Generated result" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
