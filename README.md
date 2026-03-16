@@ -3,22 +3,24 @@
 A small Flask backend + web UI for image generation using Google Imagen API.
 
 ## 1.1 Project Structure
+
+```text
 .
-├── app.py: app factory, config loading, blueprint registration
+├── app.py                 # app factory, config loading, blueprint registration
 ├── routes/
-│   ├── main.py: GET / page route
-│   └── api.py: POST /generate API route
+│   └── main.py            # GET / page route | POST /generate API route
 ├── services/
-│   └── imagen_client.py: Imagen API client/service layer
+│   └── imagen_client.py   # Imagen API client/service layer
 ├── utils/
-│   └── responses.py: unified API response helpers
+│   └── responses.py       # unified API response helpers
 ├── templates/
-│   └── index.html: HTML templates
-├── static/ : frontend CSS/JS assets
+│   └── index.html         # HTML templates
+├── static/
 │   ├── css/
 │   └── js/
 ├── requirements.txt
 └── .env.example
+```
 
 
 ## 1.2 Requirements
