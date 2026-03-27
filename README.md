@@ -1,3 +1,6 @@
+<img width="554" height="432" alt="AIGen" src="https://github.com/user-attachments/assets/f905ed8a-5be9-4c2d-bd5c-2bc9b05c1b11" />
+
+
 # 1 Flask Imagen Demo
 
 A small Flask backend + web UI for image generation using Google Imagen API.
